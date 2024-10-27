@@ -19,7 +19,7 @@ class SmsSendBatchResponse extends AbstractResponse
     {
         $this->message = $client->getResponse()->message;
         if ($client->getStatusCode() === 200) {
-            $this->status = (string)$client->getResponse()->status;
+            $this->status = (string)$client->getResponse()->status[0];
             $this->isSuccess = true;
         }
     }
